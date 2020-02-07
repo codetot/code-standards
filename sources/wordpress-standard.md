@@ -32,3 +32,24 @@ trim_trailing_whitespace = false
 [{*.txt,wp-config-sample.php}]
 end_of_line = crlf
 ```
+
+## Điều kiện
+
+Không thể output ra 1 HTML rỗng mà nên kiểm tra xem có tồn tại không đã.
+
+```php
+<?php
+$hero_title = get_field('hero_title'); // String...
+...
+$hero_enable_cta = get_field('hero_enable_cta'); // Boolean true/false
+?>
+
+<?php if( !empty($hero_title) ) : ?>
+  <h1 class="hero__title"><?php echo $hero_title; ?></h1>
+<?php endif; ?>
+<?php if( isset($hero_enable_cta) && $hero_enable_cta ) : ?>
+  <footer class="hero__footer">
+    <a class="button hero__button" href="<?php echo $hero_button_url; ?>"><?php echo $hero_button_text; ?></a>
+  </footer>
+<?php endif; ?>
+```

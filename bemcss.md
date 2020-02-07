@@ -46,7 +46,7 @@ three-up
 
 Cần đảm bảo việc class ngoài cùng sẽ sửa các element bên trong.
 
-```html5
+```html
 <section class="hero-title"></section>
 <section class="hero-title hero-title--center"></section>
 ```
@@ -67,9 +67,47 @@ Cần đảm bảo việc class ngoài cùng sẽ sửa các element bên trong.
 
 Tận dụng tối đa thế mạnh tái sử dụng bằng việc các class xử lý riêng, giúp 1 module có thể có nhiều layout/style khác nhau.
 
-```
+```html
 <section class="hero-title"></section>
 <section class="hero-title hero-title--center"></section>
 <section class="hero-title hero-title--dark-bg hero-title--white-text"></section>
 <section class="hero-title hero-title--center hero-title--dark-bg"></section>
+```
+
+## Kết hợp giữa global class và module class
+
+Global class chủ yếu là layout (`.container`, `.grid`, .`grid__col`) hay typography (`.h1`, `.h2`, `.section-title`, .`label-text`) giúp design nhất quán cho tất cả module.
+
+```html
+<section class="hero-title">
+  <div class="container hero-title__container">
+    <h1 class="h1 hero-title__headline">Hero Headline</h1>
+  </div>
+</section>
+```
+
+```scss
+/** Global class (no module, reusable) **/
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1440px;
+}
+
+/** Typography class **/
+.h1 {
+  font-family: '';
+  font-size: '';
+  line-height: '';
+  letter-spacing: '';
+  text-transform: '';
+}
+
+/** Module classes: Hero Title **/
+.hero-title__container {
+  max-width: 800px;
+}
+.hero-title__headline {
+  color: $c-dark;
+}
 ```

@@ -21,13 +21,13 @@ Ví dụ
 
 ## Xử lý chuỗi
 
-`_e()` sẽ echo string
+**`_e()` sẽ echo string**
 
 ```php
 <button class="button" aria-label="<?php _e('Toggle a button', 'text-domain'); ?>"></button>
 ```
 
-`__() chỉ return string
+**`__()` chỉ return string**
 
 ```php
 <?php
@@ -38,7 +38,7 @@ echo $default_button;
 ?>
 ```
 
-Dịch số ít (1 và nhiều)
+**Dịch cả 2 trường hợp số ít (1) và số nhiều**
 
 ```php
 $post_meta = _n( 'One post', '%s posts', $post_count, 'text-domain' );

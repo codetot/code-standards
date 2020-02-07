@@ -31,6 +31,16 @@ Lưu ý:
 
 - Commit không chứa các file compiled (vd `.min.css`, `.min.js`) do công cụ tạo ra. Trừ trường hợp commit update cả plugin hoặc theme gốc.
 
+### Merge Request/Pull Request (MR/PR)
+
+Trên các hệ thống như GitLab, GitHub, BitBucket đều có tính năng cho phép tạo Merge Request/Pull Request để đánh giá code trước khi cho lên các nhánh chính.
+
+Các developer nên tạo ngay khi có commit đầu tiên. Đặt tên MR/PR với chữ `WIP: ` ở đầu, ví dụ `WIP: Update Hero Homepage`.
+
+Trong trường hợp làm xong, cần gỡ bỏ `WIP: ` tag ở đầu đi và thông báo việc hoàn thành cho người quản lý dự án.
+
+Nếu có các comment về code, developer sắp xếp thời gian xử lý sớm. Khi đẩy code lên, thông thường các comment sẽ được báo là đã xong (resolved).
+
 ### Nhánh chính phụ và quy tắc đặt tên
 
 Các nhánh chính, chỉ cho code vào sau khi đã approve và duyệt QA

@@ -41,3 +41,35 @@ three-up
 -- three-up__col (x3)
 --- three-up__title (title #headline)
 ```
+
+## Extending luôn gán cho class ngoài cùng (module)
+
+Cần đảm bảo việc class ngoài cùng sẽ sửa các element bên trong.
+
+```html5
+<section class="hero-title"></section>
+<section class="hero-title hero-title--center"></section>
+```
+
+```scss
+.hero-title {}
+.hero-title__inner {}
+
+/** Extending **/
+.hero-title--center {
+  .hero-title__inner {
+    text-align: center;
+  }
+}
+```
+
+## Mỗi class thực hiện một tính năng
+
+Tận dụng tối đa thế mạnh tái sử dụng bằng việc các class xử lý riêng, giúp 1 module có thể có nhiều layout/style khác nhau.
+
+```
+<section class="hero-title"></section>
+<section class="hero-title hero-title--center"></section>
+<section class="hero-title hero-title--dark-bg hero-title--white-text"></section>
+<section class="hero-title hero-title--center hero-title--dark-bg"></section>
+```

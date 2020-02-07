@@ -39,17 +39,39 @@ Không thể output ra 1 HTML rỗng mà nên kiểm tra xem có tồn tại kh�
 
 ```php
 <?php
-$hero_title = get_field('hero_title'); // String...
+$title = get_field('hero_title'); // String...
 ...
-$hero_enable_cta = get_field('hero_enable_cta'); // Boolean true/false
+$enable_cta = get_field('hero_enable_cta'); // Boolean true/false
 ?>
 
-<?php if( !empty($hero_title) ) : ?>
-  <h1 class="hero__title"><?php echo $hero_title; ?></h1>
+<?php if( !empty($title) ) : ?>
+  <h1 class="hero__title"><?php echo $title; ?></h1>
 <?php endif; ?>
-<?php if( isset($hero_enable_cta) && $hero_enable_cta ) : ?>
+<?php if( isset($enable_cta) && $enable_cta ) : ?>
   <footer class="hero__footer">
-    <a class="button hero__button" href="<?php echo $hero_button_url; ?>"><?php echo $hero_button_text; ?></a>
+    <a class="button hero__button" href="<?php echo $button_url; ?>"><?php echo $button_text; ?></a>
   </footer>
 <?php endif; ?>
+```
+
+## Variable cần có prefix cho biến khi sử dụng cùng ACF
+
+Khi khởi tạo các biến của cùng 1 module trong markup, luôn luôn đặt `prefix` cho các biến này để tránh trùng nhau.
+
+```
+# Title: Hero Title
+# Name: hero_title
+
+# Title: Two Up Title
+# Name: two_up_title
+```
+
+Tuy nhiên, khi sử dụng trong 1 module cụ thể thì có thể bỏ qua khi gọi variable
+
+```php
+<?php
+// Current file: template-parts/hero.php
+$title = get_field('hero_title');
+$description = get_field('hero_description');
+?>
 ```

@@ -25,8 +25,19 @@ Nếu là element nằm trong các block nhỏ hơn, có tính chất lặp lạ
 
 ```
 two-up-intro
+- two-up-intro__title # bị trùng title
 - two-up-intro__grid
 -- two-up-intro__col (x3)
----- two-up-intro__col-title
+---- two-up-intro__col-title # bị trùng title
 ---- two-up-intro__col-description
+```
+
+Trường hợp element không bị trùng giữa các level, có thể bỏ qua block
+
+```
+three-up
+- three-up__headline
+- three-up__grid
+-- three-up__col (x3)
+--- three-up__title (title #headline)
 ```

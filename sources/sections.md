@@ -4,7 +4,7 @@ Section là khái niệm xác định một module hoặc nhiều module đượ
 
 Chẳng hạn, đây có thể là 1 và cũng có thể là 2 section. Điều này tùy thuộc vào nội dung có tính chất liên quan giữa các nội dung.
 
-![Hero Intro](media/hero-intro.png)
+![Hero Intro](../media/hero-intro.png)
 
 ## Đặt tên module
 
@@ -73,7 +73,7 @@ Hãy thử nhìn trong code SaSS:
 
 Demo:
 
-![Hero Title](media/hero-title.png)
+![Hero Title](../media/hero-title.png)
 
-![Hero Title - Version 2](media/hero-title-2.png)
+![Hero Title - Version 2](../media/hero-title-2.png)
 

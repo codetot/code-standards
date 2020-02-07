@@ -8,8 +8,6 @@ Nó là thành phần chính giúp Accessiblity (khả năng tương tác giữa
 
 ## Bắt đầu từ đâu?
 
-## Bắt đầu từ đâu?
-
 Sử dụng các tag có tính tổng thể bố cục trên website, ví dụ:
 
 ```html5
@@ -84,4 +82,34 @@ Nếu trong `<button>` chỉ có icon, ví dụ, `<span class="fa fa-bar"></span
 ```html5
 <label for="input-email" class="scr-read-only">Email</label>
 <input type="email" id="input-email" value="" placeholder="">
+```
+
+### Media
+
+**Bắt buộc sử dụng `alt=""` trong tag `<img>`
+
+Có, hiện.
+Không có, để trống `alt=""`
+
+Trong WordPress:
+
+- Khuyến khích dùng `the_post_thumbnail()`.
+- Trường hợp cần dùng với ảnh nền, sử dụng `get_the_post_thumbnail_url()`
+
+**Hình ảnh cần đặt trong tag `<figure> tag**
+
+```html5
+<figure class="image-wrapper">
+  <img src="" class="" alt="">
+  <!-- Nếu ảnh cần caption -->
+  <figcaption>Caption text</figcaption>
+</figure>
+```
+
+**Thời gian trong tag `<time>`
+
+Các bài viết (post) đều cần có thời gian khởi tạo, gọi chung là meta post.
+
+```html5
+<p>The concert starts at <time datetime="2018-07-07T20:00:00">20:00</time>.</p>
 ```

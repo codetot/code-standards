@@ -96,7 +96,7 @@ Trong WordPress:
 - Khuyến khích dùng `the_post_thumbnail()`.
 - Trường hợp cần dùng với ảnh nền, sử dụng `get_the_post_thumbnail_url()`
 
-**Hình ảnh cần đặt trong tag `<figure> tag**
+**Hình ảnh cần đặt trong tag `<figure>` tag**
 
 ```html5
 <figure class="image-wrapper">
@@ -112,4 +112,16 @@ Các bài viết (post) đều cần có thời gian khởi tạo, gọi chung l
 
 ```html5
 <p>The concert starts at <time datetime="2018-07-07T20:00:00">20:00</time>.</p>
+```
+
+**Trích dẫn sử dụng `<blockquote>`
+
+```html5
+<blockquote>
+  <!-- Có thể có nhiều dòng -->
+  <p></p>
+  <p></p>
+  <!-- Dòng cuối là tên tác giả trích dẫn -->
+  <footer>—Aldous Huxley, <cite>Brave New World</cite></footer>
+</blockquote>
 ```

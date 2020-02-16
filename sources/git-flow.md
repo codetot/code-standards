@@ -2,11 +2,9 @@
 
 Sử dụng Git giúp quản lý các phiên bản nâng cấp của web ổn định và có thể khôi phục, xem các thay đổi trước khi phát hành.
 
-## Nguyên tắc chính
+## Commit
 
-### Commit
-
-**Commit phải sử dụng tiếng Anh**
+### Commit phải sử dụng tiếng Anh
 
 Cấu trúc
 
@@ -27,11 +25,24 @@ Lưu ý:
 - Không chia động từ, để nguyên dạng, ví dụ **Fix, Update, Setup, Remove, Add**
 - Dùng tính từ bổ ngữ danh từ, ví dụ `text color` (chủ thể là **color**) khác `color text` (chủ thể là **text**)
 
-**Commit Files**
+### Commit Files
 
 - Commit không chứa các file compiled (vd `.min.css`, `.min.js`) do công cụ tạo ra. Trừ trường hợp commit update cả plugin hoặc theme gốc.
+- Commit không chứa các file config của localhost (vd `config.yml`, `wp-config.php`).
+- Commit không chứa các file setting của riêng IDE, ví dụ `.idea/`.
 
-### Merge Request/Pull Request (MR/PR)
+### Commit cần chia nhỏ
+
+Chia nhỏ các commit sau để hạn chế conflict giữa các developer.
+
+Quy ước chung là có những commit dạng này:
+
+- Commit chứa thay đổi của ACF (trong thư mục `/acf-json/`).
+- Commit chứa thay đổi của CPT UI (trong thư mục `/cpt-json/`)
+- Commit markup (chứa file .php)
+- Commit style (chứa file .css)
+
+## Merge Request/Pull Request (MR/PR)
 
 Trên các hệ thống như GitLab, GitHub, BitBucket đều có tính năng cho phép tạo Merge Request/Pull Request để đánh giá code trước khi cho lên các nhánh chính.
 
@@ -41,7 +52,7 @@ Trong trường hợp làm xong, cần gỡ bỏ `WIP: ` tag ở đầu đi và 
 
 Nếu có các comment về code, developer sắp xếp thời gian xử lý sớm. Khi đẩy code lên, thông thường các comment sẽ được báo là đã xong (resolved).
 
-### Nhánh chính phụ và quy tắc đặt tên
+## Nhánh chính phụ và quy tắc đặt tên
 
 Các nhánh chính, chỉ cho code vào sau khi đã approve và duyệt QA
 
@@ -50,11 +61,11 @@ Các nhánh chính, chỉ cho code vào sau khi đã approve và duyệt QA
 
 Các nhánh phụ, làm các nhiệm vụ và thường checkout gốc theo quy ước để làm ra.
 
-**Checkout từ `develop`**
+### Checkout từ `develop`
 
 - `feature/<feature-name>`: làm tính năng hoặc page template mới
 - `bugfix/<dev-name>/<mm-dd-yyyy>`: nếu tính năng đã được cho lên nhánh `develop`, dev làm tiếp bugfix.
 
-**Checkout từ `master`**
+### Checkout từ `master`
 
 - `hotfix/<mm-dd-yyyy>`: nếu trên live có lỗi cần fix gấp

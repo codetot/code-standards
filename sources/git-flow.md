@@ -9,7 +9,7 @@ Sử dụng Git giúp quản lý các phiên bản nâng cấp của web ổn đ
 Cấu trúc
 
 ```
-TicketID Verb + something + where
+Issue ID - Verb + something + where
 ```
 
 Ví dụ:

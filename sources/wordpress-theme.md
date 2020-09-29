@@ -1,4 +1,4 @@
-# Tài liệu hướng dẫn cài đặt và phát triển theme SHAC
+# Tài liệu hướng dẫn cài đặt và phát triển theme WordPress
 
 ## Yêu cầu
 
@@ -15,6 +15,7 @@ Trên máy có
 - Cài virtual domain theo dự án, ví dụ `codetot.test`
 - Import database và (1) update url trong table `wp_options` về domain `codetot.test`, (2) đổi username về mật khẩu để access vào backend.
 - Vào thư mục `wp-content/themes/<tên theme>/`, chạy `npm install`
+- Truy cập vào admin, tìm mục **Theme Options**, enable CDN và set về tên miền demo hoặc live. Điều này giúp toàn bộ folder `wp-content/uploads` sẽ được chuyển link sang. Lưu ý: bật cái này thì link ảnh up tại localhost không hoạt động, bạn sẽ cần up đồng thời cả trên demo và local.
 
 ## Dev
 
